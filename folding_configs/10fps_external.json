@@ -1,0 +1,266 @@
+{
+    "Defaults": {},
+    "FMPadding_rtl_0": {
+        "SIMD": 1
+    },
+    "ConvolutionInputGenerator_rtl_0": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_0": {
+        "PE": 2,
+        "SIMD": 9,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_0": {
+        "PE": 2,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "FMPadding_rtl_1": {
+        "SIMD": 64
+    },
+    "ConvolutionInputGenerator_rtl_1": {
+        "SIMD": 16,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_1": {
+        "PE": 8,
+        "SIMD": 192,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_1": {
+        "PE": 2,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "ConvolutionInputGenerator_rtl_2": {
+        "SIMD": 2,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "Pool_hls_0": {
+        "PE": 2
+    },
+    "FMPadding_rtl_2": {
+        "SIMD": 64
+    },
+    "ConvolutionInputGenerator_rtl_3": {
+        "SIMD": 4,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_2": {
+        "PE": 1,
+        "SIMD": 288,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_2": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "FMPadding_rtl_3": {
+        "SIMD": 64
+    },
+    "ConvolutionInputGenerator_rtl_4": {
+        "SIMD": 4,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_3": {
+        "PE": 1,
+        "SIMD": 288,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_3": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "ConvolutionInputGenerator_rtl_5": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "Pool_hls_1": {
+        "PE": 1
+    },
+    "FMPadding_rtl_4": {
+        "SIMD": 64
+    },
+    "ConvolutionInputGenerator_rtl_6": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_4": {
+        "PE": 1,
+        "SIMD": 144,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_4": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "FMPadding_rtl_5": {
+        "SIMD": 128
+    },
+    "ConvolutionInputGenerator_rtl_7": {
+        "SIMD": 2,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_5": {
+        "PE": 1,
+        "SIMD": 288,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_5": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "ConvolutionInputGenerator_rtl_8": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "Pool_hls_2": {
+        "PE": 1
+    },
+    "FMPadding_rtl_6": {
+        "SIMD": 128
+    },
+    "ConvolutionInputGenerator_rtl_9": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_6": {
+        "PE": 1,
+        "SIMD": 64,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_6": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "FMPadding_rtl_7": {
+        "SIMD": 128
+    },
+    "ConvolutionInputGenerator_rtl_10": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_7": {
+        "PE": 1,
+        "SIMD": 64,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_7": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "DuplicateStreams_hls_0": {
+        "PE": 1
+    },
+    "FMPadding_rtl_8": {
+        "SIMD": 128
+    },
+    "FMPadding_rtl_9": {
+        "SIMD": 128
+    },
+    "ConvolutionInputGenerator_rtl_11": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "ConvolutionInputGenerator_rtl_12": {
+        "SIMD": 1,
+        "parallel_window": 0,
+        "ram_style": "block"
+    },
+    "MVAU_rtl_8": {
+        "PE": 1,
+        "SIMD": 128,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "MVAU_rtl_9": {
+        "PE": 1,
+        "SIMD": 128,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "Thresholding_rtl_8": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "Thresholding_rtl_9": {
+        "PE": 1,
+        "runtime_writeable_weights": 0,
+        "depth_trigger_uram": 0,
+        "depth_trigger_bram": 0
+    },
+    "MVAU_rtl_10": {
+        "PE": 1,
+        "SIMD": 8,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    },
+    "MVAU_rtl_11": {
+        "PE": 1,
+        "SIMD": 32,
+        "ram_style": "auto",
+        "resType": "auto",
+        "mem_mode": "external",
+        "runtime_writeable_weights": 0
+    }
+}

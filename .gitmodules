@@ -1,0 +1,3 @@
+[submodule "finn"]
+	path = finn
+	url = https://github.com/mdanilow/finn.git

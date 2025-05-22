@@ -44,11 +44,14 @@ def step_convert_to_hw(model: ModelWrapper, cfg: build_cfg.DataflowBuildConfig):
     return model
 
 
-input_model = "models/superpointnet_q.onnx"
-folding_config = "folding_configs/10fps_external.json"
-BUILD_DIR = os.environ["FINN_BUILD_DIR"]
-OUTPUT_DIR = join(BUILD_DIR, "pointnet10_output_dir")
-BOARD = "KV260_SOM"
+# input_model = "models/superpointnet_q.onnx"
+input_model = "models/superpointnet_w3a3.onnx"
+target_fps = 20
+# folding_config = None
+folding_config = "folding_configs/20fps_w3a3_external_swubram.json"
+OUTPUT_DIR = join("build_dir", "pointnet20_w3a3")
+# BOARD = "KV260_SOM"
+BOARD = "ZCU102"
 tidy_model_file = "tidy_model.onnx"
 
 # set input datatype to uint8 and cleanup
@@ -90,7 +93,7 @@ cfg = build.DataflowBuildConfig(
     auto_fifo_depths=False,
     split_large_fifos=True,
     synth_clk_period_ns=10,
-    target_fps=10,
+    target_fps=target_fps,
     mvau_wwidth_max=1024,
     # folding_two_pass_relaxation=False,
     board=BOARD,

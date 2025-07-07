@@ -35,7 +35,8 @@ def step_convert_to_hw(model: ModelWrapper, cfg: build_cfg.DataflowBuildConfig):
     if cfg.standalone_thresholds:
         model = model.transform(to_hw.InferThresholdingLayer())
     model = model.transform(to_hw.InferQuantizedMatrixVectorActivation())
-    model = model.transform(to_hw.InferPool())
+    # model = model.transform(to_hw.InferPool())
+    model = model.transform(to_hw.InferStreamingMaxPool())
     model = model.transform(to_hw.InferConvInpGen())
     model = model.transform(to_hw.InferDuplicateStreamsLayer()) 
 
@@ -46,12 +47,32 @@ def step_convert_to_hw(model: ModelWrapper, cfg: build_cfg.DataflowBuildConfig):
 
 # input_model = "models/superpointnet_q.onnx"
 input_model = "models/superpointnet_w3a3.onnx"
-target_fps = 20
-# folding_config = None
-folding_config = "folding_configs/20fps_w3a3_external_swubram.json"
-OUTPUT_DIR = join("build_dir", "pointnet20_w3a3")
+# input_model = "models/superpointnet_w4a4.onnx"
+# input_model = "models/superpointnet_w2a2_fl4.onnx"
+# input_model = "dummy.onnx"
+
+# target_cycles = 11059200
+target_cycles = 7372800
+# target_cycles = 5529600
+# target_cycles = 3686400
+clk_mhz = 100
+clk_hz = clk_mhz * 10**6
+clk_s = 1 / clk_hz
+clk_ns = clk_s * 10**9
+target_fps = clk_hz / target_cycles
+# target_fps = 10
+print('target fps:', target_fps, "target cycles per frame:", target_cycles)
+
+folding_config = None
+# folding_config = "folding_configs/13fps_w2a2_fl4_external_swubram_mvaulut.json"
+# folding_config = "folding_configs/27fps_w3a3_external_swulut_mvaulut.json"
+folding_config = "folding_configs/9fps_w3a3_external_swubram_mvaulut.json"
+# folding_config = "folding_configs/18fps_w4a4_external_swulut.json"
+OUTPUT_DIR = join("build_dir", "pointnet9_w3a3_fifosim")
+# OUTPUT_DIR = join("build_dir", "pointnet_exploration")
 # BOARD = "KV260_SOM"
-BOARD = "ZCU102"
+# BOARD = "ZCU102"
+BOARD = "ZCU104"
 tidy_model_file = "tidy_model.onnx"
 
 # set input datatype to uint8 and cleanup
@@ -90,9 +111,10 @@ cfg = build.DataflowBuildConfig(
     standalone_thresholds=True,
     folding_config_file=folding_config,
     # specialize_layers_config_file=specialize_layers_config_file,
-    auto_fifo_depths=False,
+    fifosim_save_waveform=True,
+    auto_fifo_depths=True,
     split_large_fifos=True,
-    synth_clk_period_ns=10,
+    synth_clk_period_ns=clk_ns,
     target_fps=target_fps,
     mvau_wwidth_max=1024,
     # folding_two_pass_relaxation=False,
@@ -104,6 +126,8 @@ cfg = build.DataflowBuildConfig(
         build_cfg.DataflowOutputType.BITFILE,
         build_cfg.DataflowOutputType.PYNQ_DRIVER,
         build_cfg.DataflowOutputType.DEPLOYMENT_PACKAGE,
+        # build_cfg.DataflowOutputType.STITCHED_IP,
+        # build_cfg.DataflowOutputType.RTLSIM_PERFORMANCE,
     ],
 )
 build.build_dataflow_cfg(tidy_model_file, cfg)

@@ -6,9 +6,9 @@
     "ConvolutionInputGenerator_rtl_0": {
         "SIMD": 1,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_0": {
+    "MVAU_rtl_0": {
         "PE": 32,
         "SIMD": 1,
         "ram_style": "auto",
@@ -23,19 +23,19 @@
         "depth_trigger_bram": 0
     },
     "FMPadding_rtl_1": {
-        "SIMD": 64
+        "SIMD": 4
     },
     "ConvolutionInputGenerator_rtl_1": {
         "SIMD": 64,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_1": {
+    "MVAU_rtl_1": {
         "PE": 32,
         "SIMD": 64,
         "ram_style": "auto",
         "resType": "auto",
-        "mem_mode": "external",
+        "mem_mode": "internal_decoupled",
         "runtime_writeable_weights": 0
     },
     "Thresholding_rtl_1": {
@@ -44,23 +44,18 @@
         "depth_trigger_uram": 0,
         "depth_trigger_bram": 0
     },
-    "ConvolutionInputGenerator_rtl_2": {
-        "SIMD": 4,
-        "parallel_window": 0,
-        "ram_style": "block"
-    },
-    "Pool_hls_0": {
-        "PE": 4
+    "StreamingMaxPool_hls_0": {
+        "PE": 1
     },
     "FMPadding_rtl_2": {
-        "SIMD": 64
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_3": {
+    "ConvolutionInputGenerator_rtl_2": {
         "SIMD": 16,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_2": {
+    "MVAU_rtl_2": {
         "PE": 8,
         "SIMD": 64,
         "ram_style": "auto",
@@ -75,14 +70,14 @@
         "depth_trigger_bram": 0
     },
     "FMPadding_rtl_3": {
-        "SIMD": 64
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_4": {
+    "ConvolutionInputGenerator_rtl_3": {
         "SIMD": 16,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_3": {
+    "MVAU_rtl_3": {
         "PE": 8,
         "SIMD": 64,
         "ram_style": "auto",
@@ -96,23 +91,18 @@
         "depth_trigger_uram": 0,
         "depth_trigger_bram": 0
     },
-    "ConvolutionInputGenerator_rtl_5": {
-        "SIMD": 1,
-        "parallel_window": 0,
-        "ram_style": "block"
-    },
-    "Pool_hls_1": {
+    "StreamingMaxPool_hls_1": {
         "PE": 1
     },
     "FMPadding_rtl_4": {
-        "SIMD": 64
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_6": {
+    "ConvolutionInputGenerator_rtl_4": {
         "SIMD": 4,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_4": {
+    "MVAU_rtl_4": {
         "PE": 4,
         "SIMD": 64,
         "ram_style": "auto",
@@ -127,14 +117,14 @@
         "depth_trigger_bram": 0
     },
     "FMPadding_rtl_5": {
-        "SIMD": 128
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_7": {
+    "ConvolutionInputGenerator_rtl_5": {
         "SIMD": 8,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_5": {
+    "MVAU_rtl_5": {
         "PE": 4,
         "SIMD": 128,
         "ram_style": "auto",
@@ -148,23 +138,18 @@
         "depth_trigger_uram": 0,
         "depth_trigger_bram": 0
     },
-    "ConvolutionInputGenerator_rtl_8": {
-        "SIMD": 1,
-        "parallel_window": 0,
-        "ram_style": "block"
-    },
-    "Pool_hls_2": {
+    "StreamingMaxPool_hls_2": {
         "PE": 1
     },
     "FMPadding_rtl_6": {
-        "SIMD": 128
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_9": {
+    "ConvolutionInputGenerator_rtl_6": {
         "SIMD": 2,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_6": {
+    "MVAU_rtl_6": {
         "PE": 1,
         "SIMD": 128,
         "ram_style": "auto",
@@ -179,14 +164,14 @@
         "depth_trigger_bram": 0
     },
     "FMPadding_rtl_7": {
-        "SIMD": 128
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_10": {
+    "ConvolutionInputGenerator_rtl_7": {
         "SIMD": 2,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_7": {
+    "MVAU_rtl_7": {
         "PE": 1,
         "SIMD": 128,
         "ram_style": "auto",
@@ -204,22 +189,22 @@
         "PE": 1
     },
     "FMPadding_rtl_8": {
-        "SIMD": 128
+        "SIMD": 1
     },
     "FMPadding_rtl_9": {
-        "SIMD": 128
+        "SIMD": 1
     },
-    "ConvolutionInputGenerator_rtl_11": {
+    "ConvolutionInputGenerator_rtl_8": {
         "SIMD": 2,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "ConvolutionInputGenerator_rtl_12": {
+    "ConvolutionInputGenerator_rtl_9": {
         "SIMD": 2,
         "parallel_window": 0,
-        "ram_style": "block"
+        "ram_style": "distributed"
     },
-    "MVAU_hls_8": {
+    "MVAU_rtl_8": {
         "PE": 2,
         "SIMD": 128,
         "ram_style": "auto",
@@ -227,7 +212,7 @@
         "mem_mode": "external",
         "runtime_writeable_weights": 0
     },
-    "MVAU_hls_9": {
+    "MVAU_rtl_9": {
         "PE": 2,
         "SIMD": 128,
         "ram_style": "auto",
@@ -247,15 +232,15 @@
         "depth_trigger_uram": 0,
         "depth_trigger_bram": 0
     },
-    "MVAU_hls_10": {
-        "PE": 13,
-        "SIMD": 1,
+    "MVAU_rtl_10": {
+        "PE": 1,
+        "SIMD": 16,
         "ram_style": "auto",
         "resType": "auto",
         "mem_mode": "external",
         "runtime_writeable_weights": 0
     },
-    "MVAU_hls_11": {
+    "MVAU_rtl_11": {
         "PE": 1,
         "SIMD": 64,
         "ram_style": "auto",
